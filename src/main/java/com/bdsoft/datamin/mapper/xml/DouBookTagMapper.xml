@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdsoft.datamin.mapper.DouBookTagMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, tagName, tagUrl, tagBooks, fetchStat,
+		fetchPage
+	</sql>
+
+	<!-- 加载未抓取的图书标签url -->
+	<select id="selectUnfetchTag" resultType="DouBookTag">
+		select * from
+		dou_book_tag where fetchStat='2' limit #{size}
+	</select>
+</mapper>

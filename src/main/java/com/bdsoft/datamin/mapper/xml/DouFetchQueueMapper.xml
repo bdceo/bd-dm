@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdsoft.datamin.mapper.DouFetchQueueMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, bookName, bookIsbn, fetchDate, fetchFlag, fetchStat,
+		fetchUrl
+	</sql>
+
+	<!-- 初始化书籍抓取url -->
+	<select id="selectBookUrl4init" resultType="DouFetchQueue">
+		select
+		fetchFlag,min(id) from dou_fetch_queue where fetchStat=1 group by
+		fetchFlag
+	</select>
+
+	<!-- 加载未抓取的链接 -->
+	<select id="selectUnfetchObjlinks" resultType="DouFetchQueue">
+		select * from
+		dou_fetch_tmp where id>#{id} and fetchFlag=#{flag}
+		and fetchStat=1
+		order by id limit #{size}
+	</select>
+</mapper>

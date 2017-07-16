@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>生产Nutch统计</title>
+<script type="text/javascript" src="../js/jscharts.js"></script>
+</head>
+<body>
+
+<div id="graph">统计数据加载中...</div>
+
+<script type="text/javascript">
+	var data = new Array(
+	[1, 0],[2, 0],[3, 8],[4, 2],[5, 1],
+	[6, 0],[7, 115],[8, 272],[9, 149],[10, 27],
+	[11, 0],[12, 0],[13, 10],[14, 147],[15, 160],
+	[16, 181],[17, 260],[18, 233],[19, 32],[20, 7],
+	[21, 52],[22, 45],[23, 3],[24, 31],[25, 38],
+	[26, 31],[27, 4],[28, 59],[29, 154],[30, 176],[31, 195]);
+	
+	var myChart = new JSChart('graph', 'line');
+	myChart.setDataArray(data);
+	myChart.setTitle('生产Nutch - 8月抓取统计图');
+	myChart.setTitleColor('#8E8E8E');
+	myChart.setTitleFontSize(20);
+	myChart.setAxisNameX('Day');
+	myChart.setAxisNameY('');
+	myChart.setAxisColor('#C4C4C4');
+	myChart.setAxisValuesColor('#343434');
+	myChart.setAxisPaddingLeft(100);
+	myChart.setAxisPaddingRight(100);
+	myChart.setAxisPaddingTop(50);
+	myChart.setAxisPaddingBottom(40);
+	myChart.setAxisValuesNumberX(31);
+	myChart.setGraphExtend(true);
+	myChart.setGridColor('#c2c2c2');
+	myChart.setLineWidth(4);
+	myChart.setLineColor('#9F0505');
+	myChart.setSize(1100, 500);
+	myChart.draw();
+</script>
+
+</body>
+</html>

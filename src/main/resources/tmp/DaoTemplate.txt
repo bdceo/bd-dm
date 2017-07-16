@@ -1,0 +1,9 @@
+package com.bdsoft.datamin.dao;
+
+import jpa.entity.manager.#EXTENDS#;
+
+import com.bdsoft.datamin.entity.#ENTITY_NAME#;
+
+public #FILE_TYPE# #FILE_NAME# extends #EXTENDS#<#ENTITY_NAME#> #IMPLEMENTS# {
+
+}

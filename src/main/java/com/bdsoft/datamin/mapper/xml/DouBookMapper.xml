@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdsoft.datamin.mapper.DouBookMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, authorInfo, bookAuthor, bookCatalog, bookInfo,
+		bookIsbn, bookName, bookNameEn, bookPic, bookRank, bookSerial,
+		bookTag, bookTranslator, douUrl, packed, pages, price, pubYear,
+		publisher
+	</sql>
+
+	<select id=" " resultType="DouBook">
+		select fetch_flag,min(id) from dou_fetch_tmp where fetch_stat=1 group by fetch_flag
+	</select>
+
+</mapper>

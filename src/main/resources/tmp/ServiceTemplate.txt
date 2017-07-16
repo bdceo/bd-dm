@@ -1,0 +1,5 @@
+package com.bdsoft.datamin.service;
+
+public #FILE_TYPE# #FILE_NAME# #IMPLEMENTS#{
+
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdsoft.datamin.mapper.JDQueueMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, qtype, qurl, qstatus, ctime, ftime, rtime, ferr
+	</sql>
+
+	<select id="selectCount" resultType="java.lang.Integer">
+		select count(1) from
+		jd_queue
+	</select>
+	
+	<!-- 从DB中删除已抓商品URL -->
+	<delete id="deleteFetchedQueue">
+		delete from jd_queue where qstatus>0
+	</delete>
+
+	<!-- 读取指定数目待抓URL -->
+	<select id="selectUnFetchQueue" resultType="JDQueue">
+		select * from
+		jd_queue where qstatus=0 order by ctime limit #{count}
+	</select>
+
+
+</mapper>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+	
+	<!-- Job总调度 -->
+	<bean name="quartzFactory"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
+		<property name="startupDelay" value="5" />
+		<property name="triggers">
+			<list> <!--
+				<ref bean="douReviewdTrigger" />
+				<ref bean="douBookTrigger" />
+				<ref bean="douBuyLinkTrigger" /> 
+				<ref bean="douReviewsTrigger" />
+				<ref bean="douReviewdTrigger" />  
+				<ref bean="douTagBookTrigger" />
+				<ref bean="douLatestBookTrigger" />
+				<ref bean="douChartBookTrigger" /> -->
+			</list>
+		</property>
+	</bean>
+	<!-- 豆瓣图书 [秒] [分] [时] [日] [月] [周] [年] -->
+	<bean id="douBookTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douBookJob" />
+		<property name="cronExpression">
+			<value>0/15 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 图书导购 -->
+	<bean id="douBuyLinkTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douBuyLinkJob" />
+		<property name="cronExpression">
+			<value>0/25 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 图书评论列表 -->
+	<bean id="douReviewsTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douReviewsJob" />
+		<property name="cronExpression">
+			<value>0/15 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 图书评论详情 -->
+	<bean id="douReviewdTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douReviewdJob" />
+		<property name="cronExpression">
+			<value>0/15 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 标签图书 -->
+	<bean id="douTagBookTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douTagBookJob" />
+		<property name="cronExpression">
+			<value>0/18 * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 新书推荐 ：每周1,晚上1点 -->
+	<bean id="douLatestBookTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douLatestBookJob" />
+		<property name="cronExpression">
+			<value>0 0 1 ? * 2</value>
+		</property>
+	</bean>
+	<!-- 排行榜 ：每月1号,晚上1点,5分 -->
+	<bean id="douChartBookTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="douChartBookJob" />
+		<property name="cronExpression">
+			<value>0 5 1 1 * ?</value>
+		</property>
+	</bean>
+	<!-- Job定义 -->
+	<bean name="douBookJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.bdsoft.datamin.douban.book.job.BookJob" />
+	</bean>
+	<bean name="douBuyLinkJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.BuyLinkJob" />
+	</bean>
+	<bean name="douReviewsJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.ReviewsJob" />
+	</bean>
+	<bean name="douReviewdJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.ReviewdJob" />
+	</bean>
+	<bean name="douTagBookJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.TagBookJob" />
+	</bean>
+	<bean name="douLatestBookJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.LatestBookJob" />
+	</bean>
+	<bean name="douChartBookJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.bdsoft.datamin.douban.book.job.ChartBookJob" />
+	</bean>
+</beans>

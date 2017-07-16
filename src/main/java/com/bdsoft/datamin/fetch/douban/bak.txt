@@ -1,0 +1,49 @@
+D:/workspaceserver/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/bd_data_min/WEB-INF/classes/index
+
+ book    | max(id)
+---------+---------------------
+ book    | 209633
+ buylink | 452973
+ review  | 420179
+ exe     | 2013-04-27 23:03:47
+ 
+------------------------------------------------------------------------
+
+抓取标签，统计豆瓣书总数
+标签总数：145，图书总数：23925393
+exe : 2013-10-03 15:11
+
+标签页图书，最多可抓50页图书列表
+------------------------------------------------------------------------
+
+HTTP代理资料
+参考：http://taobaofou.com/http_fast.html
+可用：
+1	ec2-54-250-156-36.ap-northeast-1.compute.amazonaws.com	3128	US
+5	69.197.132.80	3128	US
+6	199.15.254.103	8089	US
+7	192.3.156.131	3128	US
+8	204.12.223.173	7808	US
+9	168.63.172.74	3128	US
+10	110.77.202.187	3128	TH
+11	116.228.55.217	80	CN
+13	115.25.216.6	80	CN
+14	221.176.14.72	80	CN
+15	180.250.87.132	8080	ID
+16	ec2-54-208-75-204.compute-1.amazonaws.com	80	US
+17	im.lawson.com	80	US
+18	ip249.50-31-113.static.steadfastdns.net	7808	US
+19	9005.hostingsharedbox.com	8089	US
+20	9005.hostingsharedbox.com	7808	US
+21	9005.hostingsharedbox.com	3128	US
+25	74.221.210.119	8089	US
+26	74.221.210.119	3128	US
+27	112.25.137.201	8000	CN
+28	205.164.41.101	3128	US
+29	199.15.254.103	3128	US
+30	198.50.241.160	3128	US
+
+
+未测：
+http://www.youdaili.cn/
+http://www.youdaili.cn/Daili/http/979.html
