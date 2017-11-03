@@ -51,6 +51,7 @@ public class ProxyFactory {
 		// 设置代理
 		System.setProperty("http.proxySet", "true");
 		System.setProperty("http.proxyHost", pe.getHost());
+
 		System.setProperty("http.proxyPort", pe.getPort() + "");
 		// 设置代理验证
 		if (pe.isAuth()) {
