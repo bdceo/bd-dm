@@ -1,7 +1,7 @@
 logs
 build
 target
-.idea/*
+# .idea/*
 .idea_modules
 .classpath
 .settings
@@ -21,15 +21,5 @@ pom.properties
 *.ear
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-logs
-build
-bin
-target
-.idea
-.idea_modules
-.classpath
-.settings
-.project
-.springBeans
-*.iml
+#.idea
 .DS_Store
