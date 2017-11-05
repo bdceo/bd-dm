@@ -1,7 +1,7 @@
 logs
 build
 target
-/.idea/*
+.idea/*
 .idea_modules
 .classpath
 .settings
@@ -25,4 +25,11 @@ logs
 build
 bin
 target
+.idea
+.idea_modules
+.classpath
+.settings
+.project
+.springBeans
+*.iml
 .DS_Store
