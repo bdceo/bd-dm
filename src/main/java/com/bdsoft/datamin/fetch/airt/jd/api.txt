@@ -1,0 +1,42 @@
+
+depCity	出发城市
+arrCity	到达城市
+depDate 出发日期
+arrDate	返程日期
+quaryMode	1-单程，2-往返
+
+https://jipiao.jd.com/search/queryFlight.action?
+depCity=%E6%88%90%E9%83%BD&arrCity=%E5%8C%97%E4%BA%AC
+&depDate=2017-12-01&arrDate=2017-12-01
+&queryModule=1&lineType=OW
+&queryType=listquery&queryuuid=
+&uniqueKey=&sourceId=&arrTime=
+
+
+第一次，queryuuid空，返回数据结构
+第二次，填充queryuuid，查询真实数据
+
+----------------------------------------------------------------------------------
+
+https://jipiao.jd.com/search/queryFlight.action?depCity=%E6%88%90%E9%83%BD&arrCity=%E5%8C%97%E4%BA%AC&depDate=2017-11-10&arrDate=&queryModule=1&lineType=OW&queryType=listquery&queryuuid=&uniqueKey=&sourceId=&arrTime=
+{
+    "code": 200,
+    "data": {
+        "captchaInfo": null,
+        "desc": "",
+        "flights": null,
+        "interval": "1000",
+        "isFinished": 0,	# 是否数据加载完毕
+        "queryDate": "2017-11-10",
+        "queryuuid": "6e0ae1699a1645ba9d9f93e4a0da2efd1181441411461510223111917",
+        "resultCode": 0
+    }
+}
+
+
+
+https://jipiao.jd.com/search/queryFlight.action?depCity=%E6%88%90%E9%83%BD&arrCity=%E5%8C%97%E4%BA%AC&depDate=2017-11-10&arrDate=2017-12-05&queryModule=1&lineType=OW&queryType=listquery&queryuuid=6e0ae1699a1645ba9d9f93e4a0da2efd1181441411461510223111917&uniqueKey=&sourceId=&arrTime=
+
+{"code":200,"data":{"captchaInfo":null,"desc":"","flights":[{"activityUserType":"0","addDay":"0","airTime":"1小时20分","airways":"CZ","airwaysCn":"南方航空","arrAirdrome":"周水子机场","arrCity":"DLC","arrDate":"2017-11-10","arrTerminal":"--","arrTime":"1140","arrTimeType":"1","bingoClassInfoList":[{"activityId":0,"activityUserType":null,"adtChdInfPrice":5750,"adtChdPrice":5750,"adtInfPrice":3830,"airCompanyFlag":1,"childBuildFee":0,"childLuggage":"30","childOilTax":0,"childSalePrice":1920,"childSeatCode":"J","classLevel":"3","classLimit":null,"classLimitInfo":"","classNo":"J","classNoCn":"商务舱","classText":null,"deliveryType":null,"discount":"10.0","exsitsActivity":false,"fareItemId":"AIR_CABIN_PROVISION_615927_CZ6126_J_20171110_3830","fastIssueSwitch":"false","fastIssueTime":"5","fastRefundSwitch":"false","flightSaleRuleId":0,"flightSaleSign":0,"hasVenderCouponFlag":null,"infantBuildFee":0,"infantOilTax":0,"infantSalePrice":0,"infantSeatCode":null,"infantVenderPrice":0,"isBindVenderInsurance":"0","isFastTicket":null,"isSpecialClass":null,"isfirstShow":"0","leastClassInfoFlag":null,"limitAgeBegin":null,"limitAgeEnd":null,"limitAgeText":"","limitCert":null,"limitCertText":"","luggage":"30","luggageText":"免费托运30KG","mile":2.5,"mobileMileVal":"2.5","oilTax":0,"originalPrice":3830,"pcCodesVal":"","policyComment":null,"policyId":"615927_PEK_DLC_171110_6126_J","policySourceType":null,"price":3830,"productCode":"","productDesc":"","productName":"","promotionBeans":0,"reducePrice":0,"refundFeeFormulaId":0,"refundRemark":{"text":null,"type":3,"value":""},"sale":null,"seatNum":"A","seatType":"1","shortClassNoCn":null,"sourceId":"615927","specialClassLevel":"2","spliceUniquekey":"eyJwcm9kdWN0Q29kZSI6IiIsInBvbGljeUlkIjoiNjE1OTI3X1BFS19ETENfMTcxMTEwXzYxMjZf\nSiIsInVuaXF1ZUtleSI6IiIsImZhcmVJdGVtSWQiOiJBSVJfQ0FCSU5fUFJPVklTSU9OXzYxNTky\nN19DWjYxMjZfSl8yMDE3MTExMF8zODMwIn0=","uniqueKey":"","venderInsuranceSalePrice":"","venderPrice":3830,"workTime":null},{"activityId":2390,"activityUserType":"0","adtChdInfPrice":6130,"adtChdPrice":5750,"adtInfPrice":4210,"airCompanyFlag":0,"childBuildFee":0,"childLuggage":"30","childOilTax":0,"childSalePrice":1920,"childSeatCode":"J","classLevel":"3","classLimit":{"workTimeLimit":"00:00-23:59","bill":"Itinerary","policySourceType":"3"},"classLimitInfo":"","classNo":"J","classNoCn":"商务舱","classText":null,"deliveryType":1,"discount":"10.0","exsitsActivity":true,"fareItemId":"621906CZCZ61262017-11-10","fastIssueSwitch":"true","fastIssueTime":"5","fastRefundSwitch":"false","flightSaleRuleId":0,"flightSaleSign":0,"hasVenderCouponFlag":null,"infantBuildFee":0,"infantOilTax":0,"infantSalePrice":380,"infantSeatCode":"J","infantVenderPrice":380,"isBindVenderInsurance":"0","isFastTicket":"1","isSpecialClass":null,"isfirstShow":"1","leastClassInfoFlag":null,"limitAgeBegin":null,"limitAgeEnd":null,"limitAgeText":"","limitCert":null,"limitCertText":"","luggage":"30","luggageText":"免费托运30KG","mile":2.5,"mobileMileVal":"2.5","oilTax":0,"originalPrice":3830,"pcCodesVal":"","policyComment":null,"policyId":"b65aa142-ce0f-4f5a-a529-640441600956","policySourceType":3,"price":3830,"productCode":"","productDesc":"","productName":"","promotionBeans":0,"reducePrice":10,"refundFeeFormulaId":0,"refundRemark":{"text":null,"type":3,"value":""},"sale":null,"seatNum":"A","seatType":"1","shortClassNoCn":null,"sourceId":"621906","specialClassLevel":"2","spliceUniquekey":"eyJwcm9kdWN0Q29kZSI6IiIsInBvbGljeUlkIjoiYjY1YWExNDItY2UwZi00ZjVhLWE1MjktNjQw\nNDQxNjAwOTU2IiwidW5pcXVlS2V5IjoiYjY1YWExNDItY2UwZi00ZjVhLWE1MjktNjQwNDQxNjAw\nOTU2dW5pcXVlS2V5IiwiZmFyZUl0ZW1JZCI6IjYyMTkwNkNaQ1o2MTI2MjAxNy0xMS0xMCJ9","uniqueKey":"b65aa142-ce0f-4f5a-a529-640441600956uniqueKey","venderInsuranceSalePrice":"","venderPrice":3830,"workTime":"00:00-23:59"}],"bingoLeastClassInfo":{"activityId":0,"activityUserType":null,"adtChdInfPrice":5750,"adtChdPrice":5750,"adtInfPrice":3830,"airCompanyFlag":1,"childBuildFee":0,"childLuggage":"30","childOilTax":0,"childSalePrice":1920,"childSeatCode":"J","classLevel":"3","classLimit":null,"classLimitInfo":"","classNo":"J","classNoCn":"商务舱","classText":null,"deliveryType":null,"discount":"10.0","exsitsActivity":false,"fareItemId":"AIR_CABIN_PROVISION_615927_CZ6126_J_20171110_3830","fastIssueSwitch":"false","fastIssueTime":"5","fastRefundSwitch":"false","flightSaleRuleId":0,"flightSaleSign":0,"hasVenderCouponFlag":null,"infantBuildFee":0,"infantOilTax":0,"infantSalePrice":0,"infantSeatCode":null,"infantVenderPrice":0,"isBindVenderInsurance":"0","isFastTicket":null,"isSpecialClass":null,"isfirstShow":"0","leastClassInfoFlag":null,"limitAgeBegin":null,"limitAgeEnd":null,"limitAgeText":"","limitCert":null,"limitCertText":"","luggage":"30","luggageText":"免费托运30KG","mile":2.5,"mobileMileVal":"2.5","oilTax":0,"originalPrice":3830,"pcCodesVal":"","policyComment":null,"policyId":"615927_PEK_DLC_171110_6126_J","policySourceType":null,"price":3830,"productCode":"","productDesc":"","productName":"","promotionBeans":0,"reducePrice":0,"refundFeeFormulaId":0,"refundRemark":{"text":null,"type":3,"value":""},"sale":null,"seatNum":"A","seatType":"1","shortClassNoCn":null,"sourceId":"615927","specialClassLevel":"2","spliceUniquekey":"eyJwcm9kdWN0Q29kZSI6IiIsInBvbGljeUlkIjoiNjE1OTI3X1BFS19ETENfMTcxMTEwXzYxMjZf\nSiIsInVuaXF1ZUtleSI6IiIsImZhcmVJdGVtSWQiOiJBSVJfQ0FCSU5fUFJPVklTSU9OXzYxNTky\nN19DWjYxMjZfSl8yMDE3MTExMF8zODMwIn0=","uniqueKey":"","venderInsuranceSalePrice":"","venderPrice":3830,"workTime":null},"carrierAirwaysCn":"","carrierFlightNo":null,"depAirdrome":"首都机场","depCity":"PEK","depDate":"2017-11-10","depTerminal":"T2","depTime":"1020","depTimeType":"1","exsitsActivity":true,"flightMinPriceInfo":null,"flightNo":"CZ6126","flightSaleSign":0,"hasVenderCouponFlag":null,"ifSharedFlight":false,"infantBuildFee":0,"isCodeShare":0,"isStop":"0","islimit2HoursFlight":0,"maxPromotionBeans":0,"maxReducePrice":10,"meal":"","milage":null,"minPriceMap":{"ADT_HEIGHT":{"adultPrice":3830,"childPrice":1920,"infantPrice":0},"ADT_CHD_HEIGHT":{"adultPrice":3830,"childPrice":1920,"infantPrice":0},"ADT_CHD_INF_HEIGHT":{"adultPrice":3830,"childPrice":1920,"infantPrice":380}},"optimalReducePrice":10,"planeStyle":"321","planeStyleCN":"中型机","planeStyleType":"2","sale":null,"shareFlightNo":"","tax":50,"ticketMap":null,"vipLoungeFlag":0,"yseatPrice":0}],"interval":"1000","isFinished":1,"queryDate":"2017-11-10","queryuuid":"848f5062d48740dd99336d24ac8489971181441411461510225026799","resultCode":0}}
+
+
