@@ -12,12 +12,12 @@ import java.util.List;
 public class JDFlightFeed {
 
     private Integer addDay; // 几日：0,1
-    private String airTime;// 航班飞行时间
+    private String airTime; // 航班飞行时间
 
-    private String airways;// 航空公司代号：CZ
+    private String airways; // 航空公司代号：CZ
     private String airwaysCn; // 航空公司中文：南方航空
 
-    private String flightNo;// 航班号：CZ3142
+    private String flightNo; // 航班号：CZ3142
 
     private String arrCity;// 到达机场代码：CSX
     private String arrAirdrome;// 到达机场：黄花机场
