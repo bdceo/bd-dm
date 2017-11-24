@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class CtripFisFeed {
 
-    private String acc;// 到达城市剑麻
+    private String acc;// 到达城市代码
     private String apc; // 到达机场代码
     private String acn; // 到达城市
     private String apbn;// 到达机场

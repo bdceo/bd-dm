@@ -74,15 +74,15 @@ public class BDFileUtil {
 	}
 
 	public static void main(String[] args) {
-		String name = "T10（U欢-小:金|鱼）是吗?的<值>得*奋\"斗";
-		System.out.println(name);
-		System.out.println(safeFileName(name));
+//		String name = "T10（U欢-小:金|鱼）是吗?的<值>得*奋\"斗";
+//		System.out.println(name);
+//		System.out.println(safeFileName(name));
+//
+//		File file = new File("d:/home/公众号类型.png");
+//		System.out.println(getFileName(file));
+//		System.out.println(file.getParent());
 
-		File file = new File("d:/home/公众号类型.png");
-		System.out.println(getFileName(file));
-		System.out.println(file.getParent());
-
-		File[] gcvs = new File("d:/home/gc").listFiles();
+		File[] gcvs = new File("D:/files").listFiles();
 		for (File v : gcvs) {
 			String ft = getFileType(v);
 			System.out.println(String.format("文件：%s  类型：%s", v.getName(), ft));
@@ -285,7 +285,9 @@ public class BDFileUtil {
 			byte[] type = new byte[3];
 			bis.mark(type.length);
 			bis.read(type);
-			return FILE_TYPE_MAP.get(Utils.bytesToHexString(type));
+			String tmp = Utils.bytesToHexString(type);
+			System.out.println(String.format("文件头：%s", tmp));
+			return FILE_TYPE_MAP.get(tmp);
 		} catch (Exception e) {
 			throw new RuntimeException("文件类型获取失败：" + e.getMessage());
 		} finally {
