@@ -6,6 +6,7 @@ import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.GzipDecompressingEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -47,6 +48,20 @@ import java.util.Map.Entry;
 public final class BDHttpUtil {
 
     private static Logger log = LoggerFactory.getLogger(BDHttpUtil.class);
+
+    // 公用请求配置
+    private static RequestConfig REQUEST_CONFIG = null;
+
+    static {
+        REQUEST_CONFIG = RequestConfig.custom()
+                // 从连接池获取连接的超时时间
+                .setConnectionRequestTimeout(1000)
+                // 连接建立时间，三次握手完成时间
+                .setConnectTimeout(1500)
+                // 数据传输过程中数据包之间间隔的最大时间
+                .setSocketTimeout(2500)
+                .build();
+    }
 
     // https信任证书管理
     public final static X509TrustManager X509_TM = new X509TrustManager() {
@@ -134,6 +149,7 @@ public final class BDHttpUtil {
                     log.debug("\twith header {}={}", ahm.getKey(), ahm.getValue());
                 }
             }
+            get.setConfig(REQUEST_CONFIG);
             HttpResponse res = client.execute(get);
             int code = res.getStatusLine().getStatusCode();
             if (code == 200) {
@@ -190,6 +206,7 @@ public final class BDHttpUtil {
                     log.debug("\twith header {}={}", ahm.getKey(), ahm.getValue());
                 }
             }
+            get.setConfig(REQUEST_CONFIG);
             // 发送请求并返回
             return client.execute(get);
         } catch (Exception e) {
@@ -242,7 +259,7 @@ public final class BDHttpUtil {
                     post.setEntity(body);
                 }
             }
-
+            post.setConfig(REQUEST_CONFIG);
             HttpResponse res = client.execute(post);
             int code = res.getStatusLine().getStatusCode();
             if (code == 200) {
