@@ -34,7 +34,7 @@
 		<zxing.version>3.2.1</zxing.version>
 		<mail.version>1.4.7</mail.version>
 		<httpclient.version>4.5</httpclient.version>
-		<jsoup.version>1.9.1</jsoup.version>
+		<jsoup.version>1.12.1</jsoup.version>
 		<poi.version>3.11</poi.version>
 	</properties>
 	<dependencies>

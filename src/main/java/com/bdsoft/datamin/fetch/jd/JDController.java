@@ -783,7 +783,7 @@ public class JDController {
 
 	// 系统异常监控
 	interface BDListener {
-		public void handle();
+		void handle();
 	}
 
 	// 针对数据库服务的监控
