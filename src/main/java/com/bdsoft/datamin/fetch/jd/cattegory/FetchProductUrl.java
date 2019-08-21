@@ -11,7 +11,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.bdsoft.datamin.entity.JDQueueCats;
-import com.bdsoft.datamin.fetch.jd.JDFetcher;
+import com.bdsoft.datamin.fetch.jd.JdFetcher;
 import com.bdsoft.datamin.util.BDFileUtil;
 import com.bdsoft.datamin.util.http.NetUtil;
 
@@ -22,7 +22,7 @@ import com.bdsoft.datamin.util.http.NetUtil;
  * @date 2015-11-04
  * @date 2016-09-29
  */
-public class FetchProductUrl extends JDFetcher {
+public class FetchProductUrl extends JdFetcher {
 
 	private static String ITEM_REP_FLAG = "#ID#";
 	private static final String ITEM_BASE = "http://item.jd.com/#ID#.html";

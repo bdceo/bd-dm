@@ -15,7 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.bdsoft.datamin.entity.JDQueueCats;
-import com.bdsoft.datamin.fetch.jd.JDFetcher;
+import com.bdsoft.datamin.fetch.jd.JdFetcher;
 import com.bdsoft.datamin.fetch.jd.JdUtil;
 import com.bdsoft.datamin.util.http.BDHttpParam;
 import com.bdsoft.datamin.util.http.BDHttpUtil;
@@ -27,7 +27,7 @@ import com.bdsoft.datamin.util.http.NetUtil;
  * @author 丁辰叶
  * @date 2015-11-3
  */
-public class FetchCattegory extends JDFetcher {
+public class FetchCattegory extends JdFetcher {
 
 	// 京东总分类页
 	private static String JD_CATS_HOME = "http://www.jd.com/allSort.aspx";

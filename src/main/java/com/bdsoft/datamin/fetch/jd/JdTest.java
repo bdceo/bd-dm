@@ -15,7 +15,7 @@ import com.bdsoft.datamin.util.http.NetUtil;
  * @date	 2016-5-26
  * @version  1.0.0
  */
-public class JDParseTest {
+public class JdTest {
 
 	public static void main(String[] args) throws Exception {
 		String url = null;

@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bdsoft.datamin.entity.JDQueue;
-import com.bdsoft.datamin.fetch.jd.JDFetcher;
+import com.bdsoft.datamin.fetch.jd.JdFetcher;
 import com.bdsoft.datamin.fetch.jd.cattegory.FetchProductUrl;
 
 /**
@@ -16,7 +16,7 @@ import com.bdsoft.datamin.fetch.jd.cattegory.FetchProductUrl;
  * @author 丁辰叶
  * @dete 2016-09-29
  */
-public class ImportUrl extends JDFetcher {
+public class ImportUrl extends JdFetcher {
 
 	public static void main(String[] args) {
 		ImportUrl iu = new ImportUrl();
