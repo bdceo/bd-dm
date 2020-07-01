@@ -17,7 +17,7 @@
 		<spring-wind.version>1.0</spring-wind.version>
 		<velocity.version>1.7</velocity.version>
 		<velocity-tools.version>2.0</velocity-tools.version>
-		<quartz.version>2.2.2</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 		<!-- db -->
 		<druid.version>1.0.12</druid.version>
 		<mybatis.plus>1.2.13</mybatis.plus>
