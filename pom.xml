@@ -35,7 +35,7 @@
 		<mail.version>1.4.7</mail.version>
 		<httpclient.version>4.5</httpclient.version>
 		<jsoup.version>1.12.1</jsoup.version>
-		<poi.version>3.11</poi.version>
+		<poi.version>4.1.2</poi.version>
 	</properties>
 	<dependencies>
 		<!-- 主framework依赖 -->
